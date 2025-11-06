@@ -31,7 +31,7 @@ metadata:
   name: vmapptier1-2-bootstrap-secret
   namespace: vmservice
   labels:
-    vm-selector: vmapptier1-2
+    vm-selector: vmapptier1
 stringData:
   user-data: |
     #cloud-config
