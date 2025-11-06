@@ -1,4 +1,3 @@
-##Creates a private subnet in the namespace vpc
 apiVersion: crd.nsx.vmware.com/v1alpha1
 kind: Subnet
 metadata:
