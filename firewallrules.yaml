@@ -1,0 +1,29 @@
+apiVersion: crd.nsx.vmware.com/v1alpha1
+kind: SecurityPolicy
+metadata:
+  name: vmapptier1-fw
+spec:
+  priority: 1
+  appliedTo:
+  - vmSelector:
+      matchLabels:
+        app: vmapptier1
+  rules:
+  - direction: in
+    action: allow
+    sources:
+     - ipBlocks: 
+       - cidr: 192.168.0.0/16
+    ports:
+     - protocol: http
+       port: 80
+  - direction : out
+    action: allow
+    destinations:
+     - ipBlocks: 
+       - cidr: 192.168.0.0/16
+    ports:
+     - protocol: UDP
+       port: 53
+
+      
