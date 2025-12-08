@@ -1,7 +1,7 @@
 apiVersion: vmoperator.vmware.com/v1alpha4
 kind: VirtualMachine
 metadata:
-  name: vmapptier1-2
+  name: vmapptier1-1
   namespace: vmservice
   labels:
     app: vmapptier1
@@ -13,7 +13,7 @@ spec:
   bootstrap:
     cloudInit:
       rawCloudConfig:
-        name: vmapptier1-2-bootstrap-secret
+        name: vmapptier1-1-bootstrap-secret
         key: user-data
   network:
     interfaces:
@@ -28,14 +28,14 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: vmapptier1-2-bootstrap-secret
+  name: vmapptier1-1-bootstrap-secret
   namespace: vmservice
   labels:
     vm-selector: vmapptier1
 stringData:
   user-data: |
     #cloud-config
-            hostname: vmapptier1-2
+            hostname: vmapptier1-1
             create_hostname_file: true
             users:
               - name: ben
